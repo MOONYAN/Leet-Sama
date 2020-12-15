@@ -1,12 +1,6 @@
 // https://leetcode.com/problems/merge-two-sorted-lists/
-class ListNode {
-    val: number
-    next: ListNode | null
-    constructor(val?: number, next?: ListNode | null) {
-        this.val = (val === undefined ? 0 : val)
-        this.next = (next === undefined ? null : next)
-    }
-}
+
+import { ListNode } from "./shared/list-node";
 
 function mergeTwoLists(l1: ListNode | null, l2: ListNode | null): ListNode | null {
     if (l1 === null) {
@@ -14,7 +8,7 @@ function mergeTwoLists(l1: ListNode | null, l2: ListNode | null): ListNode | nul
     }
     if (l2 === null) {
         return l1
-    };
+    }
     if (l1.val < l2.val) {
         l1.next = mergeTwoLists(l1.next, l2);
         return l1;
@@ -22,4 +16,4 @@ function mergeTwoLists(l1: ListNode | null, l2: ListNode | null): ListNode | nul
         l2.next = mergeTwoLists(l1, l2.next);
         return l2;
     }
-};
+}

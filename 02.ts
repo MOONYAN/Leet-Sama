@@ -1,13 +1,6 @@
 // https://leetcode.com/problems/add-two-numbers/
 
-class ListNode {
-    val: number
-    next: ListNode | null
-    constructor(val?: number, next?: ListNode | null) {
-        this.val = (val === undefined ? 0 : val)
-        this.next = (next === undefined ? null : next)
-    }
-}
+import { ListNode } from "./shared/list-node";
 
 function fulladder(v1: ListNode | null, v2: ListNode | null, carry: number) {
     if (!(v1 || v2)) {
@@ -21,4 +14,4 @@ function fulladder(v1: ListNode | null, v2: ListNode | null, carry: number) {
 
 function addTwoNumbers(l1: ListNode | null, l2: ListNode | null): ListNode | null {
     return fulladder(l1, l2, 0);
-};
+}
