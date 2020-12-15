@@ -1,3 +1,5 @@
+// https://leetcode.com/problems/reverse-linked-list/
+
 import { ListNode } from "./shared/list-node";
 
 function reverseList(head: ListNode | null): ListNode | null {
@@ -5,9 +7,10 @@ function reverseList(head: ListNode | null): ListNode | null {
     if(head === null){
         return null;
     }
+
     let list = [];
 
-    for (let node = head; node != null; node = node ? node.next : null) {
+    for (let node:ListNode | null = head; node != null; node = node ? node.next : null) {
         list.push(node);
     }
     for (let i = 1; i < list.length; i++) {
