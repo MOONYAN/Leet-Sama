@@ -1,24 +1,23 @@
 // https://leetcode.com/problems/squares-of-a-sorted-array/
 function sortedSquares(nums: number[]): number[] {
 
-    const N = nums.length;
+    let result = [];
 
-    nums = nums.map(n => n ** 2);
+    let idx_r = 0, idx_l = nums.length - 1;
 
-    let result = Array(N).fill(0);
+    while (idx_r <= idx_l) {
 
-    for (let idx_r = 0, idx_l = N - 1, i = N - 1; i >= 0; i--) {
-
-        const r = nums[idx_r];
-        const l = nums[idx_l];
+        const r = nums[idx_r] ** 2;
+        const l = nums[idx_l] ** 2;
 
         if (l > r) {
-            result[i] = l;
+            result.push(l);
             idx_l--;
         } else {
-            result[i] = r;
+            result.push(r);
             idx_r++;
         }
     }
-    return result;
+
+    return result.reverse();
 }
