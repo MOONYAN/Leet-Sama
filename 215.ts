@@ -1,5 +1,5 @@
 // https://leetcode.com/problems/kth-largest-element-in-an-array/
-class MinHeap {
+class MinHeap215 {
 
     private heap: number[];
     private counter = 0;
@@ -75,7 +75,7 @@ class MinHeap {
 
 function findKthLargest(nums: number[], k: number): number {
 
-    let heap = new MinHeap(k + 1);
+    let heap = new MinHeap215(k + 1);
 
     nums.forEach(v => {
         heap.push(v);
